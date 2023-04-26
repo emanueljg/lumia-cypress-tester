@@ -44,7 +44,6 @@ function add(product) {
 }
 
 
-let total = 12345;
 
 function renderCheckout(){
   $('#checkout').remove()
@@ -60,7 +59,7 @@ function renderCheckout(){
           <li>Ort: <input type="text" id="city" required pattern="[\\wåäöÅÄÖ]{2,50}"></li>
         </ul>
         <ul>
-          <li>Kortnr:  <input type="text" id="card-nr" required pattern="\\d{13,16}"></li>
+          <li>Kortnr:  <input type="text" id="card-nr" required pattern="\\d{13,24}"></li>
           <li>Datum: <input type="text" id="card-date" required pattern="\\d{2}\\/\\d{2}" placeholder="mm/yy"></li>
           <li>CCV: <input type="text" id="card-ccv" required pattern="\\d{3}"></li>
         </ul>
@@ -75,7 +74,7 @@ $('body').on('submit', '#checkout', pay)
 function pay(e){
   e.preventDefault()
   $('#checkout').remove()
-  alert("paying " + total )
+  alert("paying " + $('.total span').text() )
   items.length = 0
   $('#cart ul').html('');
 }

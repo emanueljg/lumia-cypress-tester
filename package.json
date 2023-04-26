@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node server",
-    "test-ui": "cypress open --browser chrome",
-    "test": "cypress run --browser chrome",
+    "test-ui": "cypress open --browser firefox",
+    "test": "cypress run --browser firefox",
     "make-steps": "node _auto-generate-step-definitions.js"
   },
   "cypress-cucumber-preprocessor": {
